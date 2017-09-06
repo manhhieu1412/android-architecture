@@ -2,6 +2,16 @@
 
 apply from: './config/dependencies.gradle'
 
+ext {
+    configuration = [
+            applicationId    : "vn.com.vng.todoapp",
+            buildToolsVersion: "26.0.0",
+            compileVersion   : 25,
+            minSdk           : 16,
+            targetSdk        : 23
+    ]
+}
+
 buildscript {
     repositories {
         jcenter()
@@ -22,4 +32,9 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.5'
+    distributionType = org.gradle.api.tasks.wrapper.Wrapper.DistributionType.ALL
 }
