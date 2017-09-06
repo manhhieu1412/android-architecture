@@ -1,0 +1,154 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //Android
+    supportVersion = '25.0.0'
+    playServiceVersion = "9.6.1"
+    //Libraries Version
+    daggerVersion = '2.9'
+    butterKnifeVersion = '8.5.1'
+    rxJavaVersion = '1.2.4'
+    rxAndroidVersion = '1.2.1'
+
+    javaxAnnotationVersion = '10.0-b28'
+
+    gsonVersion = '2.8.0'
+
+    okHttpVersion = '3.4.1'
+    okHttpLoggingInterceptor = '3.4.1'
+    retrofitVersion = '2.1.0'
+    retrofitConverterVersion = '2.1.0'
+    retrofitAdapterVersion = '2.1.0'
+
+    androidAnnotationsVersion = '21.0.3'
+    timberVersion = '4.5.1'
+    glideVersion = "3.7.0"
+    glideOkhttp3IntegrationVersion = "1.4.0@aar"
+    eventBusVersion = "3.0.0"
+    greendaoVersion = "3.2.0"
+
+    //Testing
+    robolectricVersion = '3.1.4'
+    jUnitVersion = '4.12'
+    assertJVersion = '1.7.1'
+    mockitoVersion = '1.10.19'
+    dexmakerVersion = '1.0'
+    espressoVersion = '2.2.2'
+    testingSupportLibVersion = '0.1'
+    leakCanaryVersion = '1.5.1'
+    robolectricVersion = '3.0'
+    espressoVersionContrib = "2.2.2"
+
+    zxingVersion = "3.3.0"
+    zxingAndroidCoreVersion = "3.3.0"
+    zxingAndroidEmbeddedVersion = "3.4.0"
+
+    reactNativeVersion = "0.42.3"
+    animatedGifVersion = "1.3.0"
+    frescoVersion = "1.3.0"
+
+    multidexVersion = "1.0.1"
+
+    crashlyticsVersion = "2.5.5@aar"
+
+    zalopayanalyticsVersion = "1.37"
+    zalopayfeedbackVersion = "1.2"
+
+    cborVersion = "0.7"
+
+    wireRuntimeVersion = "2.2.0"
+
+    CircularRevealVersion = "2.0.1@aar"
+
+    dialogPlusVersion = "1.11@aar"
+
+    retrolambdaVersion = "3.6.1"
+
+    epoxyAdatperVersion = "2.0.0"
+    smarttabVersion = "1.6.1@aar"
+
+    kotlinVersion = "1.1.2-5"
+
+    libraries = [
+            daggerCompiler         : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger                 : "com.google.dagger:dagger:${daggerVersion}",
+            javaxAnnotation        : "org.glassfish:javax.annotation:${javaxAnnotationVersion}",
+            butterKnife            : "com.jakewharton:butterknife:${butterKnifeVersion}",
+            butterKnifeCompiler    : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+            retrofit               : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitAdapter        : "com.squareup.retrofit2:adapter-rxjava:${retrofitAdapterVersion}",
+            retrofitConverter      : "com.squareup.retrofit2:converter-gson:${retrofitConverterVersion}",
+            retrofitLogging        : "com.squareup.okhttp3:logging-interceptor:${okHttpLoggingInterceptor}",
+            timber                 : "com.jakewharton.timber:timber:${timberVersion}",
+            rxJava                 : "io.reactivex:rxjava:${rxJavaVersion}",
+            rxAndroid              : "io.reactivex:rxandroid:${rxAndroidVersion}",
+            okHttp                 : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            greenDao               : "org.greenrobot:greendao:${greendaoVersion}",
+            greenDaoGenerator      : "org.greenrobot:greendao-generator:${greendaoVersion}",
+            eventbus               : "org.greenrobot:eventbus:${eventBusVersion}",
+            glide                  : "com.github.bumptech.glide:glide:${glideVersion}",
+            glideIntegration       : "com.github.bumptech.glide:okhttp3-integration:${glideOkhttp3IntegrationVersion}",
+            gson                   : "com.google.code.gson:gson:${gsonVersion}",
+            zxing                  : "com.google.zxing:core:${zxingVersion}",
+            zxing_android_core     : "com.google.zxing:android-core:${zxingAndroidCoreVersion}",
+
+            support_support_v4     : "com.android.support:support-v4:${supportVersion}",
+            support_appcompat_v7   : "com.android.support:appcompat-v7:${supportVersion}",
+            support_recyclerview_v7: "com.android.support:recyclerview-v7:${supportVersion}",
+            support_design         : "com.android.support:design:${supportVersion}",
+            support_cardview_v7    : "com.android.support:cardview-v7:${supportVersion}",
+            support_annotations    : "com.android.support:support-annotations:${supportVersion}",
+
+            react_native           : "com.facebook.react:react-native:${reactNativeVersion}",
+            animated_gif           : "com.facebook.fresco:animated-gif:${animatedGifVersion}",
+            fresco                 : "com.facebook.fresco:fresco:${frescoVersion}",
+            play_services_analytics: "com.google.android.gms:play-services-analytics:${playServiceVersion}",
+            play_services_gcm      : "com.google.android.gms:play-services-gcm:${playServiceVersion}",
+            play_services_map      : "com.google.android.gms:play-services-maps:${playServiceVersion}",
+            play_services_base     : "com.google.android.gms:play-services-base:${playServiceVersion}",
+
+            crashlytics            : "com.crashlytics.sdk.android:crashlytics:${crashlyticsVersion}",
+
+            zalopay_analytics      : "vn.com.zalopay:analytics:${zalopayanalyticsVersion}",
+            zalopay_feedback       : "vn.com.zalopay:feedback:${zalopayfeedbackVersion}",
+
+            cbor                   : "co.nstant.in:cbor:${cborVersion}",
+
+            wire_runtime           : "com.squareup.wire:wire-runtime:${wireRuntimeVersion}",
+
+            circularreveal         : "com.github.ozodrukh:CircularReveal:${CircularRevealVersion}",
+
+            dialogplus             : "com.orhanobut:dialogplus:${dialogPlusVersion}",
+
+            zxingAndroidEmbedded   : "com.journeyapps:zxing-android-embedded:${zxingAndroidEmbeddedVersion}",
+            epoxyAdapter           : "com.airbnb.android:epoxy:${epoxyAdatperVersion}",
+            epoxyAnnotation        : "com.airbnb.android:epoxy-processor:${epoxyAdatperVersion}",
+
+            smarttablayout         : "com.ogaclejapan.smarttablayout:library:${smarttabVersion}",
+            smarttablayoutUtil     : "com.ogaclejapan.smarttablayout:utils-v4:${smarttabVersion}",
+            kotlin                 : "org.jetbrains.kotlin:kotlin-stdlib-jre7:${kotlinVersion}"
+    ]
+
+    testingLibraries = [
+            junit      : "junit:junit:${jUnitVersion}",
+            robolectric: "org.robolectric:robolectric:${robolectricVersion}",
+            assertj    : "org.assertj:assertj-core:${assertJVersion}",
+            mockito    : "org.mockito:mockito-core:${mockitoVersion}",
+            espresso   : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+            espresso_contrib   : "com.android.support.test.espresso:espresso-contrib:${espressoVersionContrib}"
+    ]
+
+    developmentDependencies = [
+            leakCanaryDebug  : "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+            leakCanaryRelease: "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}",
+            leakCanaryTest   : "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}"
+    ]
+
+    configurationAndroid = [
+            multidex: "com.android.support:multidex:${multidexVersion}"
+    ]
+}
