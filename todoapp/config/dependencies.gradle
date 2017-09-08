@@ -6,11 +6,11 @@ ext {
     daggerVersion = '2.11'
     butterKnifeVersion = '8.5.1'
 
-    retrofitVersion = '2.1.0'
+    retrofitVersion = '2.3.0'
 
     epoxyVersion = "2.4.0"
     conductorVersion = "2.1.4"
-    leakCanaryVersion = "1.5.2"
+    leakCanaryVersion = "1.5.1"
     kotlin_version = "1.1.4-3"
 
     libraries = [
@@ -23,7 +23,7 @@ ext {
             butterknife_compiler   : "com.jakewharton:butterknife-compiler:$butterKnifeVersion",
 
             retrofit               : "com.squareup.retrofit2:retrofit:$retrofitVersion",
-            retrofit_adapter       : "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion",
+            retrofit_adapter       : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
             retrofit_converter     : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
 
             rxjava                 : "io.reactivex.rxjava2:rxjava:2.1.3",

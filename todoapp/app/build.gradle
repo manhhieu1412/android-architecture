@@ -32,6 +32,11 @@ android {
         versionName "1.0.0"
         resConfigs "en"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
+
         externalNativeBuild {
             cmake {
                 cppFlags ""
@@ -57,6 +62,8 @@ android {
         }
 
         debug {
+
+            multiDexEnabled false
             minifyEnabled false
             debuggable true
             signingConfig signingConfigs.debug
@@ -70,6 +77,12 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    lintOptions {
+    }
+
+    packagingOptions {
     }
 }
 
