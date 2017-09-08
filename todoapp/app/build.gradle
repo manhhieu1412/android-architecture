@@ -1,8 +1,24 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 apply from: '../config/quality/quality.gradle'
 
 def cfg = rootProject.ext.configuration
 def minSdk = hasProperty('minSdk') ? minSdk : cfg.minSdk
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        def libs = rootProject.ext.libraries
+        classpath libs.kotlin_gradle_plugin
+    }
+}
 
 android {
     compileSdkVersion cfg.compileVersion
@@ -39,11 +55,33 @@ android {
 }
 
 dependencies {
+    def tests = rootProject.ext.testingLibraries
+    def libs = rootProject.ext.libraries
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestCompile(tests.espresso_core, {
         exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs', module: 'jsr305'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+
+    compile libs.support_appcompat_v7
+    compile libs.constraint_layout
+    compile libs.kotlin
+    testCompile tests.junit
+    compile libs.retrofit
+    compile libs.retrofit_adapter
+    compile libs.retrofit_converter
+
+    compile libs.okhttp
+    compile libs.rxjava
+    compile libs.rxandroid
+
+    compile libs.timber
+    compile libs.eventbus
+    compile libs.gson
+    compile libs.epoxy
+
+    compile libs.conductor
+    compile libs.conductor_rxlifecycle2
+
 }
