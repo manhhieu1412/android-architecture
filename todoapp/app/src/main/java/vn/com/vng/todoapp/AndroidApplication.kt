@@ -1,8 +1,11 @@
 package vn.com.vng.todoapp
 
 import android.app.Application
+import android.os.StrictMode
 import com.squareup.leakcanary.LeakCanary
 import com.squareup.leakcanary.RefWatcher
+import timber.log.Timber
+import vn.com.vng.todoapp.provider.CrashlyticsTree
 
 /**
  * Created by hieuvm on 9/8/17.
@@ -12,6 +15,17 @@ class AndroidApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        if (BuildConfig.DEBUG) {
+            if (LeakCanary.isInAnalyzerProcess(this)) {
+                return
+            }
+            StrictMode.enableDefaults()
+            Timber.plant(Timber.DebugTree())
+        } else {
+            Timber.plant(CrashlyticsTree())
+        }
+
         _instance = this
         refWatcher = LeakCanary.install(this)
     }

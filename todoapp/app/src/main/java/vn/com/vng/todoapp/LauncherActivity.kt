@@ -2,11 +2,14 @@ package vn.com.vng.todoapp
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.view.ViewGroup
 import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
-import vn.com.vng.todoapp.ui.RootController
+import com.jaeger.library.StatusBarUtil
+import timber.log.Timber
+import vn.com.vng.todoapp.ui.HomeController
 
 /**
  * Created by hieuvm on 9/8/17.
@@ -21,10 +24,13 @@ class LauncherActivity : AppCompatActivity() {
         setContentView(R.layout.activity_launcher)
 
         val container = findViewById(R.id.container) as ViewGroup
+        val toolbar = findViewById(R.id.toolbar) as Toolbar
+
+        setSupportActionBar(toolbar)
 
         router = Conductor.attachRouter(this, container, savedInstanceState)
         if (!router.hasRootController()) {
-            router.setRoot(RouterTransaction.with(RootController()))
+            router.setRoot(RouterTransaction.with(HomeController()))
         }
     }
 

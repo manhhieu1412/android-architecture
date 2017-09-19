@@ -1,4 +1,4 @@
-package vn.com.vng.todoapp.ui.widget
+package vn.com.vng.todoapp.widget
 
 import android.content.Context
 import android.util.AttributeSet

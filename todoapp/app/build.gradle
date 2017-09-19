@@ -88,6 +88,17 @@ android {
     }
 }
 
+task installApp(type: Exec, dependsOn: 'installDebug') {
+    commandLine 'adb', 'shell', 'am', 'start', '-n', 'vn.com.vng.todoapp/vn.com.vng.todoapp.LauncherActivity'
+    /* doFirst {
+     }*/
+    doLast {
+        def date = new Date()
+        def formattedDate = date.format('HH:mm:ss yyyyMMdd')
+        println('Install success at : ' + formattedDate);
+    }
+}
+
 dependencies {
     def tests = rootProject.ext.testingLibraries
     def libs = rootProject.ext.libraries
@@ -133,5 +144,5 @@ dependencies {
     kapt libs.dagger_compiler
 
     compile libs.materialiconlib
-
+    compile libs.refreshlayout
 }

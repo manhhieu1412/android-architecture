@@ -5,14 +5,15 @@
     <!--app theme-->
     <color name="colorPrimary">#FD7727</color>
     <color name="colorPrimaryDark">#e95c05</color>
+    <color name="statusBar">@color/black</color>
+    <color name="colorAccent">#FD7727</color>
+    <color name="windowBackground">#d9d9d9</color>
 
     <!--26%-->
     <color name="colorPrimary_alpha">#42FD7727</color>
     <!--54%-->
     <color name="colorPrimary_alpha_2">#8AFD7727</color>
 
-    <color name="colorAccent">#FD7727</color>
-    <color name="windowBackground">#d9d9d9</color>
     <color name="colorSwitchThumbNormal">#218575</color>
     <color name="colorCheckBoxSelected">#00608d</color>
     <!--<color name="textColorPrimary"></color>-->
@@ -181,5 +182,4 @@
 
     <color name="txt_item_sub">#727f8c</color>
 
-    <color name="statusBar">@color/white</color>
 </resources>
