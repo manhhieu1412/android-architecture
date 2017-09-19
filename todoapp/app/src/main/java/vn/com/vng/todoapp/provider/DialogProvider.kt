@@ -1,12 +1,15 @@
 package vn.com.vng.todoapp.provider
 
+import android.app.Dialog
+import android.app.ProgressDialog
 import android.content.Context
-import android.support.v7.app.AlertDialog
 
 /**
  * Created by hieuvm on 9/17/17.
  * *
  */
 interface DialogProvider {
-    fun yesNo(activityContext: Context): AlertDialog
+    fun yesNo(activityContext: Context): Dialog
+
+    fun progressDialog(activityContext: Context): Dialog
 }

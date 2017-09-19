@@ -10,6 +10,7 @@ import com.bluelinelabs.conductor.Controller
 import com.bluelinelabs.conductor.ControllerChangeHandler
 import com.bluelinelabs.conductor.ControllerChangeType
 import vn.com.vng.todoapp.AndroidApplication
+import vn.com.vng.todoapp.provider.DialogProvider
 
 /**
  * Created by hieuvm on 9/17/17.
@@ -22,6 +23,8 @@ abstract class BaseController : Controller {
 
     private var mUnbinder: Unbinder? = null
     private var hasExited: Boolean = false
+
+    private var mDialogProvider: DialogProvider? = null
 
     protected abstract fun inflateView(inflater: LayoutInflater, container: ViewGroup): View
 
@@ -56,4 +59,23 @@ abstract class BaseController : Controller {
         }
     }
 
+    fun showLoading() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    fun hideLoading() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    fun onError(message: String?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    fun showMessage(message: String?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    fun hideKeyboard() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 }

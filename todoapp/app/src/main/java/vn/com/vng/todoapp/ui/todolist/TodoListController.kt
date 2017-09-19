@@ -2,6 +2,7 @@ package vn.com.vng.todoapp.ui.todolist
 
 import android.graphics.Color
 import android.view.*
+import android.widget.Button
 import vn.com.vng.todoapp.R
 import vn.com.vng.todoapp.ui.base.BaseController
 import vn.com.vng.todoapp.widget.ActionBarLayout
@@ -23,6 +24,7 @@ abstract class TodoListController : BaseController {
 
     override fun onViewBound(view: View) {
         view.setBackgroundColor(Color.BLUE)
+        var button = Button(activity!!)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

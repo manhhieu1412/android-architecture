@@ -20,13 +20,11 @@ class LauncherActivity : AppCompatActivity() {
     private lateinit var router: Router
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        StatusBarUtil.setTranslucent(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launcher)
 
         val container = findViewById(R.id.container) as ViewGroup
-        val toolbar = findViewById(R.id.toolbar) as Toolbar
-
-        setSupportActionBar(toolbar)
 
         router = Conductor.attachRouter(this, container, savedInstanceState)
         if (!router.hasRootController()) {
