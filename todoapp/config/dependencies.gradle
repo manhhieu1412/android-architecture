@@ -4,7 +4,7 @@ ext {
     playServiceVersion = "9.6.1"
     //Libraries Version
     daggerVersion = '2.11'
-    butterKnifeVersion = '8.5.1'
+    butterKnifeVersion = '8.8.1'
 
     retrofitVersion = '2.3.0'
 
@@ -16,7 +16,8 @@ ext {
     libraries = [
             dagger_compiler          : "com.google.dagger:dagger-compiler:$daggerVersion",
             dagger                   : "com.google.dagger:dagger:$daggerVersion",
-
+            dagger_android_processor : "com.google.dagger:dagger-android-processor:$daggerVersion",
+            dagger_android           : "com.google.dagger:dagger-android:$daggerVersion",
             javax_annotation         : "org.glassfish:javax.annotation:10.0-b28",
 
             butterknife              : "com.jakewharton:butterknife:$butterKnifeVersion",

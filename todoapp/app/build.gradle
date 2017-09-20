@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply from: '../config/quality/quality.gradle'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.getkeepsafe.dexcount'
+apply from: '../config/quality/quality.gradle'
 
 def cfg = rootProject.ext.configuration
 def minSdk = hasProperty('minSdk') ? minSdk : cfg.minSdk
@@ -142,6 +142,8 @@ dependencies {
 
     compile libs.dagger
     kapt libs.dagger_compiler
+    compile libs.dagger_android
+    kapt libs.dagger_android_processor
 
     compile libs.materialiconlib
     compile libs.refreshlayout
