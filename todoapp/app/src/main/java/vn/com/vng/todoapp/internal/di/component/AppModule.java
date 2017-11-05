@@ -6,8 +6,12 @@ import javax.inject.Singleton;
 
 import dagger.Binds;
 import dagger.Module;
+import dagger.android.ContributesAndroidInjector;
 import vn.com.vng.todoapp.AndroidApplication;
 import dagger.android.AndroidInjectionModule;
+import vn.com.vng.todoapp.LauncherActivity;
+import vn.com.vng.todoapp.LauncherActivityModule;
+import vn.com.vng.todoapp.internal.di.scope.PerActivity;
 
 /**
  * Provides application-wide dependencies.
@@ -25,37 +29,13 @@ abstract class AppModule {
      * However, having a scope annotation makes the module easier to read. We wouldn't have to look
      * at what is being provided in order to understand its scope.
      */
-    abstract Application application(AndroidApplication app);
+    public abstract Application application(AndroidApplication app);
 
     /**
-     * Provides the injector for the {@link MainActivity}, which has access to the dependencies
+     * Provides the injector for the {@link LauncherActivity}, which has access to the dependencies
      * provided by this application instance (singleton scoped objects).
      */
-   /* @PerActivity
-    @ContributesAndroidInjector(modules = MainActivityModule.class)
-    abstract MainActivity mainActivityInjector();
-
-    *//**
-     * Provides the injector for the {@link Example1Activity}, which has access to the dependencies
-     * provided by this application instance (singleton scoped objects).
-     *//*
     @PerActivity
-    @ContributesAndroidInjector(modules = Example1ActivityModule.class)
-    abstract Example1Activity example1ActivityInjector();
-
-    *//**
-     * Provides the injector for the {@link Example2Activity}, which has access to the dependencies
-     * provided by this application instance (singleton scoped objects).
-     *//*
-    @PerActivity
-    @ContributesAndroidInjector(modules = Example2ActivityModule.class)
-    abstract Example2Activity example2ActivityInjector();
-
-    *//**
-     * Provides the injector for the {@link Example3Activity}, which has access to the dependencies
-     * provided by this application instance (singleton scoped objects).
-     *//*
-    @PerActivity
-    @ContributesAndroidInjector(modules = Example3ActivityModule.class)
-    abstract Example3Activity example3ActivityInjector();*/
+    @ContributesAndroidInjector(modules = LauncherActivityModule.class)
+    abstract LauncherActivity launcherActivityInjector();
 }

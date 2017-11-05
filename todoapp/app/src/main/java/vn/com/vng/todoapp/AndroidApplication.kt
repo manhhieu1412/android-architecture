@@ -1,20 +1,31 @@
 package vn.com.vng.todoapp
 
+import android.app.Activity
 import android.app.Application
 import android.os.StrictMode
 import com.squareup.leakcanary.LeakCanary
 import com.squareup.leakcanary.RefWatcher
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasActivityInjector
 import timber.log.Timber
+import vn.com.vng.todoapp.internal.di.component.DaggerAppComponent
 import vn.com.vng.todoapp.provider.CrashlyticsTree
+import javax.inject.Inject
+
 
 /**
  * Created by hieuvm on 9/8/17.
  * *
  */
-class AndroidApplication : Application() {
+class AndroidApplication : Application(), HasActivityInjector {
+
+    var activityInjector: DispatchingAndroidInjector<Activity>? = null
+        @Inject set
 
     override fun onCreate() {
         super.onCreate()
+        DaggerAppComponent.builder().create(this).inject(this)
 
         if (BuildConfig.DEBUG) {
             if (LeakCanary.isInAnalyzerProcess(this)) {
@@ -28,6 +39,11 @@ class AndroidApplication : Application() {
 
         _instance = this
         refWatcher = LeakCanary.install(this)
+    }
+
+
+    override fun activityInjector(): AndroidInjector<Activity> {
+        return activityInjector as AndroidInjector<Activity>
     }
 
     /**
